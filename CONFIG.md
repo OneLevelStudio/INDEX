@@ -15,7 +15,7 @@ config.set {
   -- The treeview plug configuration
   treeview = {
     position = "lhs", -- "lhs" / "rhs" / "bhs" / "modal"
-    size=0.35,
+    size=0.30,
     dragAndDrop = { enabled = false, confirmOnRename = true },
     exclusions = {
       { type = "regex", rule="^(?:CONFIG|Library).*$", negate= false },
@@ -71,6 +71,7 @@ config.set {
 html[data-theme=dark] {
     --root-background-color: hsl(0, 0%, 5%);
     --top-background-color: hsl(0, 0%, 5%);
+    --top-border-color: hsla(0, 0%, 50%, 0.20);
     --subtle-background-color: hsla(0, 0%, 50%, 0.15);
     --meta-color: hsl(0, 25%, 70%);
     --link-color: hsl(0, 25%, 70%);
@@ -228,6 +229,9 @@ html {
     height: 100%;
     z-index: 1;
 }
+#sb-main .sb-panel:first-child {
+    border-right: none;
+}
 #sb-top .panel {
     display: none !important;
 }
@@ -238,18 +242,12 @@ html {
     font-size: 1rem !important;
     text-transform: uppercase !important;
     transition: all ease 0.2s !important;
+    background: hsla(0, 0%, 50%, 0.0) !important;
 }
-.tree__label > span {
-    background: hsla(0, 0%, 50%, 0.00) !important;
-}
-.tree__label > span:hover {
-    background: hsla(0, 0%, 50%, 0.20) !important;
-}
-.tree__label > span[data-current-page="true"] {
-    background: hsla(0, 0%, 50%, 0.15) !important;
-}
+.tree__label > span:hover,
+.tree__label > span[data-current-page="true"],
 .tree__label > span[data-current-page="true"]:hover {
-    background: hsla(0, 0%, 50%, 0.35) !important;
+    background: hsla(0, 0%, 50%, 0.2) !important;
 }
 .treeview-actions {
     background: transparent;
@@ -261,5 +259,8 @@ html {
 }
 .tree__collapse:hover {
     color: hsla(0, 0%, 100%, 0.6);
+}
+button[data-treeview-action="close-panel"] {
+    display: none;
 }
 ```
