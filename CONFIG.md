@@ -115,6 +115,9 @@ img {
     font-size: 0.7rem !important;
     font-weight: 300 !important;
 }
+.sb-hint {
+    font-family: "JetBrains Mono", monospace;
+}
 
 /* ---------- Code ---------- */
 .sb-line-fenced-code {
