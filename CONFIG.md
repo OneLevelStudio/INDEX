@@ -74,6 +74,7 @@ html[data-theme=dark] {
     --subtle-background-color: hsla(0, 0%, 50%, 0.15);
     --meta-color: hsl(0, 25%, 70%);
     --link-color: hsl(0, 25%, 70%);
+    --root-color: hsl(0, 0%, 80%);
 }
 
 *,
@@ -217,6 +218,11 @@ img {
 }
 
 /* ---------- Plugin - TreeView ---------- */
+html {
+    --treeview-folder-color: hsla(0, 0%, 100%, 0.4);
+    --treeview-page-color: hsla(0, 0%, 100%, 0.6);
+    --treeview-current-page-color: hsla(0, 0%, 100%, 0.8);
+}
 #sb-main .sb-panel {
     position: fixed;
     height: 100%;
@@ -234,15 +240,26 @@ img {
     transition: all ease 0.2s !important;
 }
 .tree__label > span {
-    background: hsla(0, 0%, 50%, 0.05) !important;
+    background: hsla(0, 0%, 50%, 0.00) !important;
 }
 .tree__label > span:hover {
-    background: hsla(0, 0%, 50%, 0.25) !important;
+    background: hsla(0, 0%, 50%, 0.20) !important;
 }
 .tree__label > span[data-current-page="true"] {
-    background: hsla(0, 0%, 50%, 0.25) !important;
+    background: hsla(0, 0%, 50%, 0.15) !important;
 }
 .tree__label > span[data-current-page="true"]:hover {
-    background: hsla(0, 0%, 50%, 0.45) !important;
+    background: hsla(0, 0%, 50%, 0.35) !important;
+}
+.treeview-actions {
+    background: transparent;
+    border: none;
+}
+.tree__collapse {
+    color: hsla(0, 0%, 100%, 0.4);
+    transition: all ease 0.2s;
+}
+.tree__collapse:hover {
+    color: hsla(0, 0%, 100%, 0.6);
 }
 ```
