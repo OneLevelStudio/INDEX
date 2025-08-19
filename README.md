@@ -4,6 +4,8 @@ Convenience script to start custom docker instances
 
 ## SilverBullet
 
+Data will be saved at: `./DATA_SILVERBULLET`
+
 ```
 mkdir -p DATA_SILVERBULLET/_plug                                                                                         && \
 wget -P DATA_SILVERBULLET https://raw.githubusercontent.com/OneLevelStudio/INDEX/refs/heads/main/CONFIG.md               && \
@@ -19,6 +21,8 @@ docker run -d \
 ```
 
 ## Nextcloud
+
+Data will be saved at: `./DATA_NEXTCLOUD/data/<USERNAME>/files`
 
 ```
 docker run -d \
