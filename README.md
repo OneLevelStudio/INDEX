@@ -11,6 +11,14 @@ docker login
 git clone https://github.com/OneLevelStudio/IMAGEN
 ```
 
+## Server Dashboard
+
+```
+sudo snap install ttyd --classic
+sudo snap install btop
+nohup ttyd -i 0.0.0.0 -p 80 -t disableLeaveAlert=true -t fontSize=20 btop --preset 0 --update 500 &
+```
+
 ## CDN (HuggingFace alternative)
 
 ```
