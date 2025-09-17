@@ -5,6 +5,8 @@ Convenience script to start server
 ## Start server
 
 ```
+sudo apt update
+apt install -y python3.12-venv
 docker login
 git clone https://github.com/OneLevelStudio/IMAGEN
 ```
