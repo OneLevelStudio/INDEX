@@ -16,7 +16,7 @@ git clone https://github.com/OneLevelStudio/IMAGEN
 ```
 sudo snap install ttyd --classic
 sudo snap install btop
-nohup ttyd -i 0.0.0.0 -p 80 -t disableLeaveAlert=true -t fontSize=20 btop --preset 0 --update 500 &
+nohup ttyd -i 0.0.0.0 -p 80 -t disableLeaveAlert=true -t fontSize=20 btop -p 0 -u 500 &
 ```
 
 ## CDN (HuggingFace alternative)
