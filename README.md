@@ -1,8 +1,37 @@
 # INDEX
 
-Convenience script to start custom docker instances
+Convenience script to start server
 
-## SilverBullet
+## Start server
+
+```
+docker login
+git clone https://github.com/OneLevelStudio/IMAGEN
+```
+
+## CDN (HuggingFace alternative)
+
+```
+mkdir -p DATA_PUBLIC
+wget -O DATA_PUBLIC/W22_I2V_14B_HGH_FP8.safetensors https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors
+wget -O DATA_PUBLIC/W22_I2V_14B_LOW_FP8.safetensors https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors
+wget -O DATA_PUBLIC/UMT5XXL_FP8.safetensors         https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+wget -O DATA_PUBLIC/W22_I2V_LX2V4S_HGH.safetensors  https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors
+wget -O DATA_PUBLIC/W22_I2V_LX2V4S_LOW.safetensors  https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors
+wget -O DATA_PUBLIC/W21_VAE.safetensors             https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors
+
+# mkdir -p DATA_PUBLIC
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/W22_I2V_14B_HGH_FP8.safetensors
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/W22_I2V_14B_LOW_FP8.safetensors
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/UMT5XXL_FP8.safetensors
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/W22_I2V_LX2V4S_HGH.safetensors
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/W22_I2V_LX2V4S_LOW.safetensors
+# wget -P DATA_PUBLIC https://huggingface.co/onelevelstudio/VIDGEN/resolve/main/WAN/W21_VAE.safetensors
+
+nohup python3 -m http.server 8000 --directory ./DATA_PUBLIC &
+```
+
+## Container: SilverBullet
 
 Data will be saved at: `./DATA_SILVERBULLET`
 
@@ -20,7 +49,7 @@ docker run -d \
   ghcr.io/silverbulletmd/silverbullet:v2
 ```
 
-## Nextcloud
+## Container: Nextcloud
 
 Data will be saved at: `./DATA_NEXTCLOUD/data/<USERNAME>/files`
 
